@@ -16,6 +16,19 @@ angular.module('ngApp').config(function(){
         $log.warn('parent run 2');
     });
 
+///////////////////////////////////////////
+
+(function (mod) {
+    function MainController($scope, $log) {
+                            // ^^ dependency injection
+        $scope.name = 'World';
+        $log.error('main ctrl');
+    }
+
+    mod.controller('MainCtrl', MainController);
+})(angular.module('ngApp'));
+
+////////////////////////////////////////////
 
 angular.module('childModule', [])
     .config(function(){

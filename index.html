@@ -9,6 +9,12 @@
         <input type="text" ng-model="myFirstModel"> (ng-model used on inputs)
         <div>{{ myFirstModel}} >>> binding to the model with an angular expression</div>
         <div>{{ :: myFirstModel}} <<< one way binding</div>
+
+        <section class="well" ng-controller="MainCtrl">
+            <p>Hello {{::name}}!</p>
+            <p>(don't forget to check out the console!)</p>
+        </section>
+
         <script src="https://code.angularjs.org/1.5.3/angular.js"></script>
         <script src="app.js"></script>
     </body>
