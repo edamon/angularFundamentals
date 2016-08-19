@@ -4,11 +4,12 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="style.css" />
 </head>
-    <body ng-app>
+    <body ng-app="ngApp">
         <div>{{2 + 2}} <-- angular expression</div>
         <input type="text" ng-model="myFirstModel"> (ng-model used on inputs)
         <div>{{ myFirstModel}} >>> binding to the model with an angular expression</div>
         <div>{{ :: myFirstModel}} <<< one way binding</div>
         <script src="https://code.angularjs.org/1.5.3/angular.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
