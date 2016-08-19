@@ -5,15 +5,19 @@
     <link rel="stylesheet" href="style.css" />
 </head>
     <body ng-app="ngApp">
-        <div>{{2 + 2}} <-- angular expression</div>
-        <input type="text" ng-model="myFirstModel"> (ng-model used on inputs)
-        <div>{{ myFirstModel}} >>> binding to the model with an angular expression</div>
-        <div>{{ :: myFirstModel}} <<< one way binding</div>
 
-        <section class="well" ng-controller="MainCtrl as vm">
-            <p>Hello {{::vm.name}}!</p>
-            <p>(don't forget to check out the console!)</p>
-            <button class="btn btn-primary" ng-click="vm.clickAction()">Click me!</button>
+
+        <section ng-controller="MainCtrl as main">
+            <p>Main title: <strong>{{ main.title }}</strong></p>
+            <div ng-controller="AnotherCtrl as another">
+                <p>AnotherCtrl title: <strong>{{ another.title }}</strong></p>
+                <p>Parent title: <strong>{{ main.title }}</strong></p>
+                <div ng-controller="YetAnotherCtrl as yet">
+                    YetAnotherCtrl title: <strong>{{ yet.title }}</strong>
+                    Parent title: <strong>{{ another.title }}</strong>
+                    Parent parent title: <strong>{{ main.title }}</strong>
+                </div>
+            </div>
         </section>
 
         <script src="https://code.angularjs.org/1.5.3/angular.js"></script>

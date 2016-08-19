@@ -19,21 +19,25 @@ angular.module('ngApp').config(function(){
 ///////////////////////////////////////////
 
 (function (mod) {
-    function MainController($log) {
-                            // ^^ dependency injection
-        //var main = this;          // this does not have to be the same as the alias in the template
-        this.name = 'World';
-        $log.error('main ctrl');
-        this.clickAction = function (message) {
-            showAlert();
-
-            function showAlert() {
-                alert('message: ' + this.name);     // closure, this.name is undefined, use main
-            }
-        }
+    mod.controller('MainCtrl', MainController);
+    mod.controller('AnotherCtrl', AnotherCtrl);
+    mod.controller('YetAnotherCtrl', YetAnotherCtrl);
+    
+    function MainController() {
+        var main = this;
+        main.title = 'A New Hope';
+    }
+    
+    function AnotherCtrl() {
+        var an = this;
+        an.title = 'The Empire Strikes Back';
+    }
+    
+    function YetAnotherCtrl() {
+        var yet = this;
+        yet.title = 'Return of the Jedi';
     }
 
-    mod.controller('MainCtrl', MainController);
 })(angular.module('ngApp'));
 
 ////////////////////////////////////////////
