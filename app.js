@@ -19,10 +19,18 @@ angular.module('ngApp').config(function(){
 ///////////////////////////////////////////
 
 (function (mod) {
-    function MainController($scope, $log) {
+    function MainController($log) {
                             // ^^ dependency injection
-        $scope.name = 'World';
+        //var main = this;          // this does not have to be the same as the alias in the template
+        this.name = 'World';
         $log.error('main ctrl');
+        this.clickAction = function (message) {
+            showAlert();
+
+            function showAlert() {
+                alert('message: ' + this.name);     // closure, this.name is undefined, use main
+            }
+        }
     }
 
     mod.controller('MainCtrl', MainController);

@@ -10,9 +10,10 @@
         <div>{{ myFirstModel}} >>> binding to the model with an angular expression</div>
         <div>{{ :: myFirstModel}} <<< one way binding</div>
 
-        <section class="well" ng-controller="MainCtrl">
-            <p>Hello {{::name}}!</p>
+        <section class="well" ng-controller="MainCtrl as vm">
+            <p>Hello {{::vm.name}}!</p>
             <p>(don't forget to check out the console!)</p>
+            <button class="btn btn-primary" ng-click="vm.clickAction()">Click me!</button>
         </section>
 
         <script src="https://code.angularjs.org/1.5.3/angular.js"></script>
