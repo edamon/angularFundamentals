@@ -1,0 +1,114 @@
+<section class="tab-container">
+    <div class="well">
+        hello, I am page 1.  You just got ng-included.
+    </div>
+    <div class="well">
+        <h4>ng-model, ng-class (as string, array)</h4>
+        <div class="row">
+            <div class="col-sm-3" ng-model="color">
+                <p />size:
+                <br />
+                <input type="radio" ng-model="size" value="fa-lg"> fa-lg
+                <br/>
+                <input type="radio" ng-model="size" value="fa-3x"> fa-3x
+                <br/>
+                <input type="radio" ng-model="size" value="fa-5x"> fa-5x
+                <br/>
+
+                <p />color:
+                <br />
+                <input type="radio" ng-model="color" value=""> default
+                <br/>
+                <input type="radio" ng-model="color" value="red"> Danger
+                <br/>
+                <input type="radio" ng-model="color" value="warning"> Warning
+                <br/>
+            </div>
+            <div class="col-sm-9" ng-class="color">     <!--as a string-->
+
+                <!-- as an array-->
+                <i class="fa fa-exclamation-triangle" ng-class="[size, color]"></i> {{size}} {{color}}
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <h4>ng-class as expression(s)</h4>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <input type="button" class="btn btn-primary"
+                    ng-model="spin"
+                    ng-click="spin = !spin" value="{{spin ? 'Stop' : 'Start'}} Spin" />
+                <input type="button" class="btn btn-danger"
+                    ng-model="makeRed"
+                    ng-click="makeRed = !makeRed" value="{{makeRed ? 'Not Red' : 'Red'}}"
+                    ng-class="makeRed ? 'btn-default' : 'btn-danger'" />
+            </div>
+            <div class="col-sm-9">
+                <i class="fa fa-refresh fa-5x" ng-class="{ 'fa-spin': spin, red: makeRed }"></i>
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <h4>ng-class as a ternary operator</h4>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <input type="button" class="btn"
+                    ng-model="love"
+                    ng-click="love = !love" value="{{love ? 'hate =(' : 'Love'}}"
+                    ng-class="love ? 'btn-primary' : 'btn-danger'" />
+            </div>
+            <div class="col-sm-9">
+                <i class="fa fa-heart fa-5x red" ng-class="love ? 'bubble' : 'blue'"></i>
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <h4>ng-if</h4>
+        <div class="row">
+            <div class="col-sm-4">
+               <label>Eric is:
+
+                <input type="button" class="btn btn-primary"
+                    ng-model="awesome" ng-init="awesome=true"
+                    ng-click="awesome = !awesome" value="{{awesome ? 'not awesome' : 'AWESOME'}}" />
+                </label><br/>
+            </div>
+            <div class="col-sm-4" >
+               <span ng-if="awesome" class="animate-if">
+                   <i class="fa fa-smile-o fa-5x"></i>
+               </span>
+            </div>
+            <div class="col-sm-4" >
+               <span ng-if="!awesome" class="animate-if">
+                   <i class="fa fa-frown-o fa-5x"></i>
+               </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="well">
+        <h4>ng-hide /  ng-show</h4>
+        <div class="row">
+            <div class="col-sm-4">
+               <label>Eric is:
+
+                <input type="button" class="btn btn-primary"
+                    ng-model="soawesome" ng-init="soawesome=true"
+                    ng-click="soawesome = !soawesome" value="{{soawesome ? 'not awesome' : 'AWESOME'}}" />
+                </label><br/>
+            </div>
+            <div class="col-sm-4" >
+               <span ng-show="soawesome" class="animate-show">
+                   <i class="fa fa-smile-o fa-5x"></i>
+               </span>
+            </div>
+            <div class="col-sm-4" >
+               <span ng-hide="soawesome" class="animate-show">
+                   <i class="fa fa-frown-o fa-5x"></i>
+               </span>
+            </div>
+        </div>
+    </div>
+</section>

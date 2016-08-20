@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
-    <body ng-app="ngApp">
 
+<body ng-app="ngApp" ng-cloak="">
 
-        <section ng-controller="MainCtrl as main">
-            <p>Main title: <strong>{{ main.title }}</strong></p>
-            <div ng-controller="AnotherCtrl as another">
-                <p>AnotherCtrl title: <strong>{{ another.title }}</strong></p>
-                <p>Parent title: <strong>{{ main.title }}</strong></p>
-                <div ng-controller="YetAnotherCtrl as yet">
-                    YetAnotherCtrl title: <strong>{{ yet.title }}</strong>
-                    Parent title: <strong>{{ another.title }}</strong>
-                    Parent parent title: <strong>{{ main.title }}</strong>
-                </div>
+    <div ng-controller="MainCtrl as main">
+        <nav>
+            <ul class="nav nav-tabs nav-justified">
+                <li ng-class="{'active': main.activeTab == 1}"><a href="#" ng-click="main.activateTab(1)">Page 1</a></li>
+                <li ng-class="{'active': main.activeTab == 2}"><a href="#" ng-click="main.activateTab(2)">Page 2</a></li>
+            </ul>
+        </nav>
+        <div ng-switch on="main.activeTab">
+            <div ng-switch-when="1">
+                <div ng-include="'page1.html'"></div>
             </div>
-        </section>
+            <div ng-switch-when="2">
+                <div ng-include="'page2.html'"></div>
+            </div>
+        </div>
+    </div>
 
-        <script src="https://code.angularjs.org/1.5.3/angular.js"></script>
-        <script src="app.js"></script>
-    </body>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="app.js "></script>
+</body>
+
 </html>

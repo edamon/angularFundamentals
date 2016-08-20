@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('ngApp', ['childModule']);  //declaring a module (includes [])
+var app = angular.module('ngApp', ['childModule', 'ngAnimate']);  //declaring a module (includes [])
 app.config(function(){
         console.log('parent config 1');
     });
@@ -20,24 +20,36 @@ angular.module('ngApp').config(function(){
 
 (function (mod) {
     mod.controller('MainCtrl', MainController);
-    mod.controller('AnotherCtrl', AnotherCtrl);
-    mod.controller('YetAnotherCtrl', YetAnotherCtrl);
-    
+    mod.controller('Page2Ctrl', Page2Ctrl);
+
     function MainController() {
         var main = this;
         main.title = 'A New Hope';
-    }
-    
-    function AnotherCtrl() {
-        var an = this;
-        an.title = 'The Empire Strikes Back';
-    }
-    
-    function YetAnotherCtrl() {
-        var yet = this;
-        yet.title = 'Return of the Jedi';
+        main.activeTab = 1;
+
+        main.activateTab = function (num) {
+            main.activeTab = num;
+        }
     }
 
+    function Page2Ctrl(){
+        var self = this;
+        self.title = 'try adding duplicates, then check console error';
+        self.people = [
+            {
+                first : 'Eric',
+                last: 'Damon'
+            },
+            {
+                first : 'Brad',
+                last: 'Zepecki'
+            }
+        ];
+
+        self.addPerson = function (person) {
+            self.people.push(person);
+        }
+    }
 })(angular.module('ngApp'));
 
 ////////////////////////////////////////////
