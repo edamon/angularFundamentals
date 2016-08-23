@@ -21,6 +21,7 @@ angular.module('ngApp').config(function(){
 (function (mod) {
     mod.controller('MainCtrl', MainController);
     mod.controller('Page2Ctrl', Page2Ctrl);
+    mod.controller('DirectiveController', DirectiveController);
 
     function MainController() {
         var main = this;
@@ -48,6 +49,16 @@ angular.module('ngApp').config(function(){
 
         self.addPerson = function (person) {
             self.people.push(person);
+        }
+    }
+
+    function DirectiveController($timeout) {
+        var dr = this;
+        dr.loadingThing = true;
+        dr.loading2 = true;
+        dr.toggleLoading = function(){
+            dr.loadingThing = !dr.loadingThing;
+            $timeout(function(){dr.loading2 = !dr.loading2}, 2000);
         }
     }
 })(angular.module('ngApp'));

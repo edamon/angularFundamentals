@@ -5,6 +5,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="svg-icon.css" />
+    <link rel="stylesheet" href="loading-indicator.css" />
 </head>
 
 <body ng-app="ngApp" ng-cloak="">
@@ -14,6 +16,7 @@
             <ul class="nav nav-tabs nav-justified">
                 <li ng-class="{'active': main.activeTab == 1}"><a href="#" ng-click="main.activateTab(1)">Page 1</a></li>
                 <li ng-class="{'active': main.activeTab == 2}"><a href="#" ng-click="main.activateTab(2)">Page 2</a></li>
+                <li ng-class="{'active': main.activeTab == 3}"><a href="#" ng-click="main.activateTab(3)">Directives</a></li>
             </ul>
         </nav>
         <div ng-switch on="main.activeTab">
@@ -23,12 +26,17 @@
             <div ng-switch-when="2">
                 <div ng-include="'page2.html'"></div>
             </div>
+            <div ng-switch-when="3">
+                <div ng-include="'directives.html'"></div>
+            </div>
         </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="app.js "></script>
+    <script src="svg-icon.directive.js "></script>
+    <script src="loadingIndicator.directive.js"></script>
 </body>
 
 </html>

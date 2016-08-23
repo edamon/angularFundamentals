@@ -1,0 +1,57 @@
+
+.icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.icon-sm svg{
+    height: 18px;
+    width: 18px;
+}
+
+.icon-lg svg{
+    height: 45px;
+    width: 45px;
+}
+
+/*base */
+
+.ico-alert{
+    height:40px;
+}
+object .ico-alert .symbol,
+.ico-alert .symbol{
+    fill: white;
+}
+object .ico-alert .background,
+.ico-alert .background{
+    fill: green;
+}
+/* red */
+.red object .ico-alert .symbol,
+.red .ico-alert .symbol{
+    fill: yellow;
+}
+
+.red object .ico-alert .background,
+.red .ico-alert .background{
+    fill: red;
+}
+
+/*blue */
+object.ico-alert.blue svg .ico-alert .background,
+.blue .ico-alert .background{
+    fill: blue;
+}
+
+object.ico-alert.blue svg .ico-alert .symbol,
+.blue .ico-alert .symbol{
+    fill: orange;
+}
+
+em{
+    color:red;
+    font-weight:800;
+    font-style:normal;
+    font-size: 1.1rem;
+}

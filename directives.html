@@ -1,0 +1,39 @@
+<section class="tab-container" ng-controller="DirectiveController as dr">
+    <div class="well">
+        Demo a few simple Directives.
+    </div>
+    <div class="well">
+        <h4>svg-icon</h4>
+        <div class="row">
+            <div class="col-sm-3" ng-model="color">
+                <p />size:<br />
+                <input type="radio" ng-model="size" value="icon">  default <br/>
+                <input type="radio" ng-model="size" value="icon-sm"> small <br/>
+                <input type="radio" ng-model="size" value="icon-lg">  large <br/>
+
+                <p />color:<br />
+                <input type="radio" ng-model="color" value="">  default <br/>
+                <input type="radio" ng-model="color" value="red">  Red <br/>
+                <input type="radio" ng-model="color" value="blue"> Blue <br/>
+            </div>
+            <div class="col-sm-9" ng-class="color">
+                <svg-icon id="icon-alert" class="alert" ng-class="[size, color]" ></svg-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="well" ng-controller="DirectiveController as lc">
+        <h4>loading-indicator</h4>
+        <div class="row">
+            <div class="col-sm-3" ng-model="color">
+                <button class=""btn btn-primary ng-click="lc.toggleLoading()">Toggle loading flag</button>
+            </div>
+            <div class="col-sm-9" ng-class="color">
+                <div loading-indicator="lc.loadingThing" toggle="lc.toggleLoading()" class="big-block">
+                    <div>All your fancy data is finished loading</div>
+                </div>
+                <div loading-indicator="lc.loading2" toggle="lc.toggleLoading()" class="big-block">All your other fancy data is finished loading</div>
+            </div>
+        </div>
+    </div>
+</section>
