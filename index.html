@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="svg-icon.css" />
     <link rel="stylesheet" href="loading-indicator.css" />
+    <link rel="stylesheet" href="techs/techs.css" />
 </head>
 
 <body ng-app="ngApp" ng-cloak="">
@@ -17,6 +18,7 @@
                 <li ng-class="{'active': main.activeTab == 1}"><a href="#" ng-click="main.activateTab(1)">Page 1</a></li>
                 <li ng-class="{'active': main.activeTab == 2}"><a href="#" ng-click="main.activateTab(2)">Page 2</a></li>
                 <li ng-class="{'active': main.activeTab == 3}"><a href="#" ng-click="main.activateTab(3)">Directives</a></li>
+                <li ng-class="{'active': main.activeTab == 4}"><a href="#" ng-click="main.activateTab(4)">Components</a></li>
             </ul>
         </nav>
         <div ng-switch on="main.activeTab">
@@ -29,6 +31,9 @@
             <div ng-switch-when="3">
                 <div ng-include="'directives.html'"></div>
             </div>
+            <div ng-switch-when="4">
+                <div ng-include="'components.html'"></div>
+            </div>
         </div>
     </div>
 
@@ -37,6 +42,11 @@
     <script src="app.js "></script>
     <script src="svg-icon.directive.js "></script>
     <script src="loadingIndicator.directive.js"></script>
+
+    <script src="header/header.component.js"></script>
+    <script src="footer/footer.component.js"></script>
+    <script src="techs/techs.component.js"></script>
+    <script src="techs/tech.component.js"></script>
 </body>
 
 </html>
