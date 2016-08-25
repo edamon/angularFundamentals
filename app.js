@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('ngApp', ['childModule', 'ngAnimate', 'sn-techs']);  //declaring a module (includes [])
+var app = angular.module('ngApp', ['ngAnimate', 'sn-childModule', 'sn-techs']);  //declaring a module (includes [])
 app.config(function(){
         console.log('parent config 1');
     });
@@ -65,16 +65,4 @@ angular.module('ngApp').config(function(){
 
 ////////////////////////////////////////////
 
-angular.module('childModule', [])
-    .config(function(){
-        console.log('child config 1');
-    })
-    .run(function($log){
-        $log.warn('child run 1');
-    })
-    .config(function(){
-        console.log('child config 2');
-    })
-    .run(function($log){
-        $log.warn('child run 2');
-    });
+
