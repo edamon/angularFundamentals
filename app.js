@@ -1,5 +1,10 @@
 'use strict';
-var app = angular.module('ngApp', ['ngAnimate', 'sn-childModule', 'sn-techs']);  //declaring a module (includes [])
+var modules = ['ngAnimate',
+               'sn-childModule',
+               'sn-custom-directives',
+               'sn-techs'];
+
+var app = angular.module('ngApp', modules);  //declaring a module (includes [])
 app.config(function(){
         console.log('parent config 1');
     });
@@ -21,7 +26,6 @@ angular.module('ngApp').config(function(){
 (function (mod) {
     mod.controller('MainCtrl', MainController);
     mod.controller('Page2Ctrl', Page2Ctrl);
-    mod.controller('DirectiveController', DirectiveController);
 
     function MainController() {
         var main = this;
@@ -52,15 +56,6 @@ angular.module('ngApp').config(function(){
         }
     }
 
-    function DirectiveController($timeout) {
-        var dr = this;
-        dr.loadingThing = true;
-        dr.loading2 = true;
-        dr.toggleLoading = function(){
-            dr.loadingThing = !dr.loadingThing;
-            $timeout(function(){dr.loading2 = !dr.loading2}, 2000);
-        }
-    }
 })(angular.module('ngApp'));
 
 ////////////////////////////////////////////

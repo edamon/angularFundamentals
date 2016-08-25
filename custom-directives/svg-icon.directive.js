@@ -13,9 +13,9 @@
             },
             templateUrl : function (element, attrs) {
                 // templateUrl can be a relative path to a file, or a function.
-                return attrs.id + '.svg';
+                return 'custom-directives/' + attrs.id + '.svg';
             }
         };
     }
     mod.directive('svgIcon', svgIcon);
-})(angular.module('ngApp'));
+})(angular.module('sn-custom-directives'));

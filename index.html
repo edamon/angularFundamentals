@@ -5,8 +5,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="svg-icon.css" />
-    <link rel="stylesheet" href="loading-indicator.css" />
+    <link rel="stylesheet" href="custom-directives/svg-icon.css" />
+    <link rel="stylesheet" href="custom-directives/loading-indicator.css" />
     <link rel="stylesheet" href="techs/techs.css" />
 </head>
 
@@ -23,13 +23,13 @@
         </nav>
         <div ng-switch on="main.activeTab">
             <div ng-switch-when="1">
-                <div ng-include="'page1.html'"></div>
+                <div ng-include="'directives-lesson/page1.html'"></div>
             </div>
             <div ng-switch-when="2">
-                <div ng-include="'page2.html'"></div>
+                <div ng-include="'directives-lesson/page2.html'"></div>
             </div>
             <div ng-switch-when="3">
-                <div ng-include="'directives.html'"></div>
+                <div ng-include="'custom-directives/directives.html'"></div>
             </div>
             <div ng-switch-when="4">
                 <div ng-include="'techs/components.html'"></div>
@@ -43,8 +43,11 @@
 
     <script src="childModule/childModule.module.js"></script>
     <script src="childModule/childModule.config.js"></script>
-    <script src="svg-icon.directive.js "></script>
-    <script src="loadingIndicator.directive.js"></script>
+
+    <script src="custom-directives/custom-directives.module.js"></script>
+    <script src="custom-directives/directive.controller.js"></script>
+    <script src="custom-directives/svg-icon.directive.js"></script>
+    <script src="custom-directives/loadingIndicator.directive.js"></script>
 
     <script src="techs/techs.module.js"></script>
     <script src="techs/header.component.js"></script>

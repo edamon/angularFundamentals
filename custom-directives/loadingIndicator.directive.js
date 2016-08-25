@@ -31,4 +31,4 @@
         };
 
     }
-})(angular.module('ngApp'));
+})(angular.module('sn-custom-directives'));
