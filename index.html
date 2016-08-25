@@ -21,6 +21,9 @@
                 <li ng-class="{'active': main.activeTab == 4}"><a href="#" ng-click="main.activateTab(4)">Components</a></li>
             </ul>
         </nav>
+        <section>
+            <h1>{{main.greeting}}!</h1>
+        </section>
         <div ng-switch on="main.activeTab">
             <div ng-switch-when="1">
                 <div ng-include="'directives-lesson/page1.html'"></div>
@@ -58,6 +61,7 @@
     <script src="techs/tech.component.js"></script>
 
     <script src="app.js "></script>
+    <script src="app.config.js "></script>
 </body>
 
 </html>

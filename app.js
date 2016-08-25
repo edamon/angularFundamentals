@@ -13,11 +13,14 @@
         .run(function($log){
             $log.warn('parent run 2');
         })
+
+        .value('greeting', 'Hello')
+
         .controller('MainCtrl', MainController);
 
-    function MainController() {
+    function MainController(greeting) {
         var main = this;
-        main.title = 'A New Hope';
+        main.greeting = greeting;
         main.activeTab = 1;
 
         main.activateTab = function (num) {
