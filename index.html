@@ -23,6 +23,11 @@
         </nav>
         <section>
             <h1>{{main.greeting}}!</h1>
+            <div class="panel panel-default">
+                <label>Radius: <input type="text" ng-model="main.radius"></label>
+                <button class="btn btn-success" ng-click="main.calculateArea(main.radius)">Calculate Area</button>
+                {{main.area}}
+            </div>
         </section>
         <div ng-switch on="main.activeTab">
             <div ng-switch-when="1">

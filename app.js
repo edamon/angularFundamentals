@@ -15,16 +15,20 @@
         })
 
         .value('greeting', 'Hello')
-
+        .constant('PI', 3.14159265359)
         .controller('MainCtrl', MainController);
 
-    function MainController(greeting) {
+    function MainController(greeting, PI) {
         var main = this;
         main.greeting = greeting;
         main.activeTab = 1;
 
         main.activateTab = function (num) {
             main.activeTab = num;
+        }
+        
+        main.calculateArea = function (radius) {
+            main.area = PI * radius * radius;
         }
     }
 })();
