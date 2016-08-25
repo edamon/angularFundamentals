@@ -1,5 +1,5 @@
 angular
-  .module('ngApp')
+  .module('sn-techs')
   .component('fountainTech', {
     templateUrl: 'techs/tech.html',
     bindings: {

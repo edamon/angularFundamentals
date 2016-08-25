@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('ngApp', ['childModule', 'ngAnimate']);  //declaring a module (includes [])
+var app = angular.module('ngApp', ['childModule', 'ngAnimate', 'sn-techs']);  //declaring a module (includes [])
 app.config(function(){
         console.log('parent config 1');
     });

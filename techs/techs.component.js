@@ -14,5 +14,5 @@
                 vm.techs = response.data;
             });
     }
-})(angular.module('ngApp'));
+})(angular.module('sn-techs'));
   
