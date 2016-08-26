@@ -5,14 +5,12 @@
         controller: TechsController
     });
 
-    function TechsController($http) {
+    function TechsController(techsFactory) {
         var vm = this;
 
-        $http
-            .get('techs/techs.json')
-            .then(function (response) {
-                vm.techs = response.data;
-            });
+        techsFactory.getTechs().then(function (data) {
+            vm.techs = data;
+        });
     }
 })(angular.module('sn-techs'));
   
