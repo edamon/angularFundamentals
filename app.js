@@ -5,7 +5,9 @@
                    'sn-directives-lesson',
                    'sn-custom-directives',
                    'sn-techs',
-                   'sn-libs'];
+                   'sn-time',
+                   'sn-libs'
+                   ];
 
     angular.module('ngApp', modules)
         .run(function($log){
@@ -20,10 +22,10 @@
         .constant('PI', 3.14159265359)
         .controller('MainCtrl', MainController);
 
-    function MainController(greeting, PI, moment) {
+    function MainController(greeting, PI, TimeService) {
         var main = this;
         main.greeting = greeting;
-        main.time = moment().format('L LT');
+        main.current = TimeService.currentTime;
         main.activeTab = 1;
 
         main.activateTab = function (num) {
@@ -34,7 +36,7 @@
             main.area = PI * radius * radius;
         }
 
-        throw "testing the exception handler";
+        //throw "testing the exception handler";
     }
 })();
 

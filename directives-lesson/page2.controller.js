@@ -2,9 +2,10 @@
 'use strict';
     module.controller('Page2Ctrl', Page2Ctrl);
 
-    function Page2Ctrl($filter, PeopleService){
+    function Page2Ctrl($filter, PeopleService, TimeService){
         // to inject a custom filter, add the word 'Filter' after the filter name
         var self = this;
+        self.current = TimeService.currentTime;
         self.title = 'Built in Filters with ng-repeat';
 
         var people = PeopleService.getPeople();

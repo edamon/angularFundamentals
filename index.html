@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="custom-directives/loading-indicator.css" />
     <link rel="stylesheet" href="techs/techs.css" />
 
+
 </head>
 
 <body ng-app="ngApp" ng-cloak="">
@@ -17,7 +18,7 @@
         <header>
             <div class="row header">
                 <div class="col-sm-6 header-title"><h1>{{main.greeting}}!</h1></div>
-                <div class="col-sm-6 header-date">{{main.time}}</div>
+                <div class="col-sm-6 header-date">{{main.current.time}}</div>
             </div>
 
             <div class="container panel panel-default">
@@ -56,6 +57,8 @@
     <script src="bower_components/moment/min/moment.min.js"></script>
 
     <script src="lib/lib.module.js"></script>
+
+    <script src="time/time.module.js"></script>
 
     <script src="childModule/childModule.module.js"></script>
     <script src="childModule/childModule.config.js"></script>
