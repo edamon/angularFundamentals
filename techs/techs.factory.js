@@ -2,13 +2,15 @@
 'use strict';
     module.factory('techsFactory', techsFactory);
 
-    function techsFactory($http, techMapper) {
+    function techsFactory($http, techMapper, $q, $timeout, timeoutDelayService) {
         return {
             getTechs: getTechs
         };
 
         function getTechs() {
-            return $http
+            var deferred = $q.defer();
+
+            $http
                 .get('techs/techs.json')
                 .then(function (response) {
                     //return response.data;
@@ -18,8 +20,18 @@
                     angular.forEach(response.data, function (t) {
                         techs.push(techMapper.map(t))
                     });
-                    return techs;
+
+                    $timeout(function () {
+                        deferred.resolve(techs);
+                    }, timeoutDelayService.timeout);
+
+
+                    // also see https://docs.angularjs.org/api/ng/service/$http
+                    // You can specify a function in the transformResponse property
+                    // of the $http config object
                 });
+
+            return deferred.promise;
         }
     }
 })(angular.module('sn-techs'));
