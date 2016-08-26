@@ -2,17 +2,23 @@
     <div class="well">
         good afternoon.  You ng-switched to page 2.
     </div>
-    {{two.title}}
+    <p><i>//todo:  apply reverse filter</i></p>
+    {{two.title }}
+    <p>number filter : {{1234 | number:2 }}</p>
+
     <div class="row">
-        <div class="col-sm-4"><input type="text" ng-model="person.first"></div>
-        <div class="col-sm-4"><input type="text" ng-model="person.last"></div>
-        <div class="col-sm-4"><button class="btn btn-primary" ng-click="two.addPerson(person)">Add</button></div>
+        <div class="col-sm-4"><input type="text" ng-model="first"></div>
+        <div class="col-sm-4"><input type="text" ng-model="last"></div>
+        <div class="col-sm-4"><button class="btn btn-primary" ng-click="two.addPerson(first, last)">Add</button></div>
+    </div>
+    <div class="row">
+        <input type="search" ng-model="search.$" placeholder="filter friends..." aria-label="filter friends" />
     </div>
     <ul class="list-group">
-        <li class="list-group-item" ng-class="{'odd': $odd }" ng-repeat="person in two.people">
+        <li class="list-group-item" ng-class="{'odd': $odd }" ng-repeat="person in two.people | orderBy: 'last' | filter:search">
             <div class="row">
-                <div class="col-sm-6">{{person.first}}</div>
-                <div class="col-sm-6">{{person.last}}</div>
+                <div class="col-sm-6">{{person.first | lowercase}}</div>
+                <div class="col-sm-6">{{person.last | uppercase}}</div>
             </div>
         </li>
     </ul>
