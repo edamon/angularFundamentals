@@ -9,10 +9,11 @@
 
     angular.module('ngApp', modules)
         .run(function($log){
-            $log.warn('parent run 1');
+            $log.debug('parent run 1');
         })
-        .run(function($log){
-            $log.warn('parent run 2');
+        .run(function(){
+            console.log('parent run 2');
+
         })
 
         .value('greeting', 'Hello')
@@ -32,6 +33,8 @@
         main.calculateArea = function (radius) {
             main.area = PI * radius * radius;
         }
+
+        throw "testing the exception handler";
     }
 })();
 
