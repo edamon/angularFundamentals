@@ -9,8 +9,8 @@
             console.log('parent config 2');
         })
         .config(function ($provide) {
-            // $provide.decorator('greeting', function ($delegate) {
-            //     return $delegate + ' World!';
-            // });
+            $provide.decorator('greeting', function ($delegate) {
+                return $delegate + ' World!';
+            });
         });
 })();

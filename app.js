@@ -4,7 +4,8 @@
                    'sn-childModule',
                    'sn-directives-lesson',
                    'sn-custom-directives',
-                   'sn-techs'];
+                   'sn-techs',
+                   'sn-libs'];
 
     angular.module('ngApp', modules)
         .run(function($log){
@@ -18,9 +19,10 @@
         .constant('PI', 3.14159265359)
         .controller('MainCtrl', MainController);
 
-    function MainController(greeting, PI) {
+    function MainController(greeting, PI, moment) {
         var main = this;
         main.greeting = greeting;
+        main.time = moment().format('L LT');
         main.activeTab = 1;
 
         main.activateTab = function (num) {

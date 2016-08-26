@@ -1,0 +1,10 @@
+{
+  "name": "angularFundamentals",
+  "version": "0.0.0",
+  "authors": [
+    "Eric Damon <eric.damon@gmail.com>"
+  ],
+  "dependencies": {
+    "moment": "^2.14.1"
+  }
+}
