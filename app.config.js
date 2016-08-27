@@ -58,5 +58,8 @@
             $provide.decorator('greeting', function ($delegate) {
                 return $delegate + ' World!';
             });
-        });
+        })
+        .config(['$httpProvider', function($httpProvider) {
+            $httpProvider.interceptors.push('timestampMarker');
+        }]);
 })();

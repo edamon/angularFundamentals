@@ -13,6 +13,8 @@
             $http
                 .get('techs/techs.json')
                 .then(function (response) {
+                    var time = response.config.responseTimestamp - response.config.requestTimestamp;
+                    console.log('The request took ' + (time / 1000) + ' seconds.');
                     //return response.data;
                     //omg, returning raw json data to the controller?  LOLS!
 
