@@ -1,0 +1,20 @@
+<section class="tab-container" ng-controller="HomeCtrl as home">
+    <div class="well">
+        View the Event Log
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-success" ng-click="home.subScribe()">Subscribe to Events</button>
+            <button class="btn btn-danger" ng-click="home.stop()">UnSubscribe from Events</button>
+        </div>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" ng-class="{'odd': $odd }" ng-repeat="e in home.messages  | orderBy: '-time' track by $index">
+            <div class="row">
+                <div class="col-xs-9">{{e.title}}</div>
+                <div class="col-xs-3 "><span class="text-right">{{e.time}}</span></div>
+            </div>
+        </li>
+    </ul>
+</section>

@@ -74,3 +74,7 @@ body {
 li.odd {
     background-color: #eee;
 }
+
+.text-right {
+    float: right;
+}

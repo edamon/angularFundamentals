@@ -6,7 +6,9 @@
                    'sn-custom-directives',
                    'sn-techs',
                    'sn-time',
-                   'sn-libs'
+                   'sn-libs',
+        'sn-message',
+        'sn-home'
                    ];
 
     angular.module('ngApp', modules)

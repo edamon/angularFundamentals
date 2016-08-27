@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="custom-directives/loading-indicator.css" />
     <link rel="stylesheet" href="techs/techs.css" />
 
-
 </head>
 
 <body ng-app="ngApp" ng-cloak="">
@@ -29,24 +28,28 @@
         </header>
         <nav>
             <ul class="nav nav-tabs nav-justified">
-                <li ng-class="{'active': main.activeTab == 1}"><a href="#" ng-click="main.activateTab(1)">Page 1</a></li>
-                <li ng-class="{'active': main.activeTab == 2}"><a href="#" ng-click="main.activateTab(2)">Page 2</a></li>
-                <li ng-class="{'active': main.activeTab == 3}"><a href="#" ng-click="main.activateTab(3)">Directives</a></li>
-                <li ng-class="{'active': main.activeTab == 4}"><a href="#" ng-click="main.activateTab(4)">Components</a></li>
+                <li ng-class="{'active': main.activeTab == 1}"><a href="#" ng-click="main.activateTab(1)">Home</a></li>
+                <li ng-class="{'active': main.activeTab == 2}"><a href="#" ng-click="main.activateTab(2)">Page 1</a></li>
+                <li ng-class="{'active': main.activeTab == 3}"><a href="#" ng-click="main.activateTab(3)">Page 2</a></li>
+                <li ng-class="{'active': main.activeTab == 4}"><a href="#" ng-click="main.activateTab(4)">Directives</a></li>
+                <li ng-class="{'active': main.activeTab == 5}"><a href="#" ng-click="main.activateTab(5)">Components</a></li>
             </ul>
         </nav>
 
         <div ng-switch on="main.activeTab">
             <div ng-switch-when="1">
-                <div ng-include="'directives-lesson/page1.html'"></div>
+                <div ng-include="'home/home.html'"></div>
             </div>
             <div ng-switch-when="2">
-                <div ng-include="'directives-lesson/page2.html'"></div>
+                <div ng-include="'directives-lesson/page1.html'"></div>
             </div>
             <div ng-switch-when="3">
-                <div ng-include="'custom-directives/directives.html'"></div>
+                <div ng-include="'directives-lesson/page2.html'"></div>
             </div>
             <div ng-switch-when="4">
+                <div ng-include="'custom-directives/directives.html'"></div>
+            </div>
+            <div ng-switch-when="5">
                 <div ng-include="'techs/components.html'"></div>
             </div>
         </div>
@@ -59,6 +62,10 @@
     <script src="lib/lib.module.js"></script>
 
     <script src="time/time.module.js"></script>
+    <script src="message/message.module.js"></script>
+
+    <script src="home/home.module.js"></script>
+    <script src="home/home.controller.js"></script>
 
     <script src="childModule/childModule.module.js"></script>
     <script src="childModule/childModule.config.js"></script>
