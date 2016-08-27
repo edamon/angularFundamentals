@@ -7,8 +7,9 @@
                    'sn-techs',
                    'sn-time',
                    'sn-libs',
-        'sn-message',
-        'sn-home'
+                   'sn-message',
+                   'sn-home',
+                   'ui.router'
                    ];
 
     angular.module('ngApp', modules)
@@ -42,12 +43,7 @@
         var main = this;
         main.greeting = greeting;
         main.current = TimeService.currentTime;
-        main.activeTab = 1;
 
-        main.activateTab = function (num) {
-            main.activeTab = num;
-        }
-        
         main.calculateArea = function (radius) {
             main.area = PI * radius * radius;
         }

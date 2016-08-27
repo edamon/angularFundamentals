@@ -28,35 +28,19 @@
         </header>
         <nav>
             <ul class="nav nav-tabs nav-justified">
-                <li ng-class="{'active': main.activeTab == 1}"><a href="#" ng-click="main.activateTab(1)">Home</a></li>
-                <li ng-class="{'active': main.activeTab == 2}"><a href="#" ng-click="main.activateTab(2)">Page 1</a></li>
-                <li ng-class="{'active': main.activeTab == 3}"><a href="#" ng-click="main.activateTab(3)">Page 2</a></li>
-                <li ng-class="{'active': main.activeTab == 4}"><a href="#" ng-click="main.activateTab(4)">Directives</a></li>
-                <li ng-class="{'active': main.activeTab == 5}"><a href="#" ng-click="main.activateTab(5)">Components</a></li>
+                <li ui-sref="home" ui-sref-active="active"><a>Home</a></li>
+                <li ui-sref="page1" ui-sref-active="active"><a>Page 1</a></li>
+                <li ui-sref="page2" ui-sref-active="active"><a>Page 2</a></li>
+                <li ui-sref="directives" ui-sref-active="active"><a>Directives</a></li>
+                <li ui-sref="components" ui-sref-active="active"><a>Components</a></li>
             </ul>
         </nav>
-
-        <div ng-switch on="main.activeTab">
-            <div ng-switch-when="1">
-                <div ng-include="'home/home.html'"></div>
-            </div>
-            <div ng-switch-when="2">
-                <div ng-include="'directives-lesson/page1.html'"></div>
-            </div>
-            <div ng-switch-when="3">
-                <div ng-include="'directives-lesson/page2.html'"></div>
-            </div>
-            <div ng-switch-when="4">
-                <div ng-include="'custom-directives/directives.html'"></div>
-            </div>
-            <div ng-switch-when="5">
-                <div ng-include="'techs/components.html'"></div>
-            </div>
-        </div>
+        <ui-view></ui-view>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/moment/min/moment.min.js"></script>
 
     <script src="lib/lib.module.js"></script>
@@ -89,6 +73,7 @@
 
     <script src="app.js "></script>
     <script src="app.config.js "></script>
+    <script src="app.router.js"></script>
 </body>
 
 </html>
